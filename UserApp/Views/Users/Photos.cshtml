@@ -1,0 +1,10 @@
+﻿@using UserApp.Components
+@model int
+@{
+    ViewBag.Title = "Фото";
+}
+
+<a asp-action="Index" class="btn"><i class="bi bi-x-lg"></i></a>
+<div class="display-1 text-center">Фотографии</div>
+
+@await Component.InvokeAsync(nameof(UserPhotos), new {id = Model})

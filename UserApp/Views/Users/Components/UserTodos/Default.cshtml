@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Todo>
+
+<div class="d-flex">
+
+    <div class="table-responsive w-75">
+        <table class="table table-hover">
+            <tbody>
+                @foreach (var item in @Model)
+                {
+                    <tr>
+                        <td> <i class=" @(item.Completed ? "bi bi-check-square-fill" : "bi bi-square" )"></i> </td>
+                        <td>@item.Title</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="p-3 m-4 text-nowrap">
+        <ul>
+            <li><p class="lead">Всего дел: @ViewBag.Count</p></li>
+            <li><p class="lead">Выполнено: @ViewBag.Done</p></li>
+            <li><p class="lead">Не завершено: @ViewBag.Notdone</p></li>
+        </ul>
+    </div>
+</div>

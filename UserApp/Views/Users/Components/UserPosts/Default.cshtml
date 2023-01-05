@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Post>
+
+<div class="d-flex">
+    <div>
+        @foreach (var item in Model)
+        {
+            <div class="p-5 m-4 bg-light rounded-2">
+                <div class="container-fluid py-5">
+                    <h1 class="display-5 fw-bold">@item.Title</h1>
+                    <p class="col-md-8 fs-4">@item.Body</p>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="p-3 m-4 text-nowrap">
+        <ul>
+            <li><p class="lead">Количество публикаций: @ViewBag.Count</p></li>
+            <li><p class="lead">Минимальная длина текста: @ViewBag.Min</p></li>
+            <li><p class="lead">Средняя длина текста: @ViewBag.Avg</p></li>
+            <li><p class="lead">Максимальная длина текста: @ViewBag.Max</p></li>
+        </ul>
+    </div>
+</div>
